@@ -7,9 +7,14 @@ var express = require("express"),
 
 // Connect to the DB
 mongoose.set("useUnifiedTopology", true);
-mongoose.connect("mongodb://localhost:27017/application_manager", {
-	useNewUrlParser : true
-});
+// mongoose.connect("mongodb://localhost:27017/application_manager", {
+// 	useNewUrlParser : true
+// });
+
+mongoose.connect(
+	"mongodb+srv://mihaela:<mihaela>@cluster0.uchft.mongodb.net/<application_manager>?retryWrites=true&w=majority"
+);
+
 app.set("view engine", "ejs");
 //To serve static css styles
 app.use(express.static("public"));
