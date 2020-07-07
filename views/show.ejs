@@ -1,0 +1,62 @@
+<%- include("partials/header") %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header"><%= student.name%></div>
+    <div class="ui top attached">
+        <div class="item">
+            <div class="description">
+                <p> 
+                    <strong>Email: </strong> 
+                    <%- student.email %>
+                </p>
+                <hr>
+                <p> 
+                    <strong>Age: </strong>
+                    <%- student.age %>
+                </p>
+                <hr>
+                <p> 
+                    <strong>Phone number: </strong> 
+                    <%- student.phoneNumber %>
+                </p>
+                <hr>
+                <p> 
+                    <strong> Prefered way of comunication: </strong> 
+                    <%- student.preferredWayOfCommunication %>
+                </p>
+                <hr>
+                <p> 
+                    <strong> English Level: </strong> 
+                    <%- student.englishLevel %>
+                </p>
+                <hr>
+                <p> 
+                    <strong>Avaiable to start at: </strong>
+                    <%- student.avaiableToStart.toDateString() %>
+                </p>
+                <hr>
+                <p> 
+                    <strong>Technical Skills and Courses</strong>
+                    <div class="segment">
+                        <%- student.technicalSkills %>
+                    </div>
+                </p>
+                <hr>
+                <p> 
+                    <strong>Short Personal Presentation</strong>
+                    <div class="segment">
+                        <%- student.personalPresentation %>
+                    </div>
+                </p>
+            </div>
+            
+            <a class="ui orange basic button" href="/students/<%= student._id %>/edit">Edit</a>
+            <form id="delete" action="/students/<%= student._id %>?_method=DELETE" method="POST">
+                <button class="ui red basic button">Delete</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer") %>

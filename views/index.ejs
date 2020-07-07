@@ -1,0 +1,26 @@
+<%- include("partials/header") %>
+
+<div class="ui main text container">
+    <div class="ui huge header">Application Student Manager</div>
+    <div class="ui top  attached segment">
+        <div class="ui divided items">
+            <!-- For every student make a new line where the name is shown with a link to the SHOW page with all the information for the student  -->
+            <% students.forEach(function(student){ %>
+                <div class="item">
+                    <div class="content">
+                        <!-- Show students name -->
+                         <h1 class="header""><%= student.name %></h1>
+                         <div class="extra">
+                             <a class="ui floated basic olive button" href="/students/<%= student._id %>">
+                                 Show More
+                                 <i class="right chevron icon"></i>
+                             </a>
+                         </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer") %>

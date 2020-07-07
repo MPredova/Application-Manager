@@ -1,0 +1,71 @@
+<%- include("partials/header") %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">New Student</div>
+        <!-- FORM STARTS -->
+        <form class="ui form" action="/students" method="POST">
+            <!-- NAME -->
+            <div class="field">
+                <label>Name</label>
+                <input type="text" name="student[name]" placeholder="Name">
+            </div>
+            <!-- EMAIL -->
+            <div class="field">
+                <label>Email</label>
+                <input type="email" name="student[email]" placeholder="Email">
+            </div>
+            <!-- AGE -->
+            <div class="field">
+                <label>Age</label>
+                <input type="number" name="student[age]" placeholder="Age">
+            </div>
+            <!-- PHONE NUMBER -->
+            <div class="field">
+                <label>Phone number: </label>
+                <input type="text" name="student[phoneNumber]" placeholder="Phone number">
+            </div>
+            <!-- PREFFERED WAY OF COMMUNICATION -->
+            <div class="field">
+                <label>Preferred Way of Communication: </label>
+                <div>
+                    <input type="radio" id="contactChoice1" name="student[preferredWayOfCommunication]" value="Email">
+                    <label for="contactChoice1">Email</label>
+                </div>
+                <div>
+                    <input type="radio" id="contactChoice2" name="student[preferredWayOfCommunication]" value="Phone">
+                    <label for="contactChoice2">Phone</label>
+                </div> 
+            </div>
+            <!-- ENGLISH LEVEL -->
+            <div class="field">
+                <label>English Level: </label>
+                <select name="student[englishLevel]">
+                    <option value="A 1">A 1</option>
+                    <option value="A 2">A 2</option>
+                    <option value="B 1">B 1</option>
+                    <option value="B 2">B 2</option>
+                    <option value="C 1">C 1</option>
+                    <option value="C 2">C 2</option>
+                </select>
+            </div>
+            <!-- START DATE -->
+            <div class="field">
+                <label>Avaiable to start:</label>
+                <input type="date" name="student[avaiableToStart]" value="2020-07-05">
+            </div>
+            <!-- TECHNICAL SKILLS -->
+            <div class="field">
+                <label>Technical Skills and Courses</label>
+                <textarea name="student[technicalSkills]"></textarea>
+            </div> 
+            <!-- PERSONAL PRESENTATION -->
+            <div class="field">
+                <label>Short Personal Presentation</label>
+                <textarea name="student[personalPresentation]"></textarea>
+            </div> 
+            <!-- SUBMIT BUTTON -->
+            <input class="ui green big basic button" type="submit">
+        </form>
+</div>
+
+<%- include("partials/footer") %>
