@@ -12,7 +12,10 @@ mongoose.set("useUnifiedTopology", true);
 // });
 
 mongoose.connect(
-	"mongodb+srv://mihaela:<mihaela>@cluster0.uchft.mongodb.net/<application_manager>?retryWrites=true&w=majority"
+	"mongodb+srv://mihaela:<mihaela>@cluster0.uchft.mongodb.net/<application_manager>?retryWrites=true&w=majority",
+	{
+		useNewUrlParser : true
+	}
 );
 
 app.set("view engine", "ejs");
